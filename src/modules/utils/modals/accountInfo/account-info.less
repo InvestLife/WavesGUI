@@ -1,4 +1,4 @@
-@import (reference) url('../../../config');
+\@import (reference) url('../../../config');
 
 md-dialog.account-info {
   md-dialog-content {
@@ -11,7 +11,7 @@ md-dialog.account-info {
         display: flex;
         flex-direction: row;
         align-items: center;
-        height: 54px;
+        height: @height-control-big;
         padding: 0 30px 0 15px;
       }
     }
@@ -92,6 +92,12 @@ md-dialog.account-info {
     md-dialog-content {
       w-avatar {
         display: none;
+      }
+
+      w-copy-wrap {
+        .container {
+          height: @height-control-responsive;
+        }
       }
     }
   }

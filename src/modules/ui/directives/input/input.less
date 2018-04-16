@@ -49,15 +49,26 @@ input[type="checkbox"] {
     }
   }
 
-  &.big {
-    height: @height-control-big;
-    padding: @padding-control-big;
+  &.big::placeholder {
     font-size: @font-size-control-big;
+  }
 
-    &::placeholder {
+  @media screen and (max-width: 768px) {
+    &.big {
+      height: @height-control-responsive;
+      padding: @padding-control-responsive;
       font-size: @font-size-control-big;
     }
   }
+
+  @media screen and (min-width: 769px) {
+    &.big {
+      height: @height-control-big;
+      padding: @padding-control-big;
+      font-size: @font-size-control-big;
+    }
+  }
+
 }
 
 w-input {
@@ -174,5 +185,12 @@ form.ng-submitted {
     &.ng-invalid:not(.embed):not(:focus):not(.focus):not(.no-validate) {
       border-color: @color-warning-400;
     }
+  }
+}
+
+@meida screen and (max-width: 768px) {
+  w-input input[type="text"], input[type="password"], input[type="number"] {
+    height: @height-control-responsive;
+    padding: @padding-control-responsive;
   }
 }
